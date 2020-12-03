@@ -4,25 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:minHeight="@dimen/list_item_height">
 
     <ImageView
         android:id="@+id/list_item_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/color_black"
-        android:contentDescription="@string/descrip" />
+        android:contentDescription="@string/descrip"
+        android:background="@color/tan_background"/>
 
     <LinearLayout
-        android:layout_width="255dp"
+        android:id="@+id/words_element"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:paddingTop="25dp"
+        android:paddingLeft="16dp">
 
-     <TextView
+        <TextView
             android:id="@+id/miwok_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/ElementStyle"
             tools:text="lutti" />
 
 
@@ -30,6 +33,7 @@
             android:id="@+id/default_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/ElementStyle"
             tools:text="one" />
 
 
