@@ -19,13 +19,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
     private static final String LOG_TAG = WordAdapter.class.getSimpleName();
 
     /**
-     *
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
      * The context is used to inflate the layout file, and the list is the data we want
      * to populate into the lists.
      *
-     * @param context        The current context. Used to inflate the layout file.
-     * @param word A List of AndroidFlavor objects to display in a list
+     * @param context The current context. Used to inflate the layout file.
+     * @param word    A List of AndroidFlavor objects to display in a list
      */
     public WordAdapter(Activity context, ArrayList<Word> word) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
@@ -38,17 +37,17 @@ public class WordAdapter extends ArrayAdapter<Word> {
     /**
      * Provides a view for an AdapterView (ListView, GridView, etc.)
      *
-     * @param position The position in the list of data that should be displayed in the
-     *                 list item view.
+     * @param position    The position in the list of data that should be displayed in the
+     *                    list item view.
      * @param convertView The recycled view to populate.
-     * @param parent The parent ViewGroup that is used for inflation.
+     * @param parent      The parent ViewGroup that is used for inflation.
      * @return The View for the position in the AdapterView.
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
-        if(listItemView == null) {
+        if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
         }
@@ -68,7 +67,11 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // set this text on the number TextView
         numberTextView.setText(currentWord.getMiwokTranslation());
 
-
+        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
+        ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_icon);
+        // Get the image resource ID from the current AndroidFlavor object and
+        // set the image to iconView
+        iconView.setImageResource(currentWord.getImageResourceId());
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
