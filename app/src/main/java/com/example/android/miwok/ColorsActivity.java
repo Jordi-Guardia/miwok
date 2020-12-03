@@ -15,14 +15,10 @@ public class ColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
-
-        LinearLayout numero = (LinearLayout) findViewById(R.id.words_element);
-        //numero.setBackgroundColor(numero.getContext().getResources().getColor(R.color.category_numbers));
-
-        numero.setBackgroundColor(getResources().getColor(R.color.category_numbers, null));
-
         // Create a list of words
         ArrayList<Word> words = new ArrayList<Word>();
+
+
         words.add(new Word("red", "weṭeṭṭi", R.drawable.color_red));
         words.add(new Word("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow));
         words.add(new Word("dusty yellow", "ṭopiisә", R.drawable.color_dusty_yellow));
