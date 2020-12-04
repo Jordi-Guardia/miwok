@@ -15,4 +15,5 @@
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
     <string name="category_family">Family Members</string>
     <string name="descrip">Imatge per a visualitzar</string>
+    <string name="imatgl_texte">Imatge en referencia al texte</string>
 </resources>
