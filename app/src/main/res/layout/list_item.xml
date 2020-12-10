@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fons"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/list_item_height"
     android:background="@color/tan_background"
-    android:minHeight="@dimen/list_item_height"
-    android:orientation="horizontal">
+    android:minHeight="@dimen/list_item_height">
 
     <ImageView
         android:id="@+id/list_item_icon"
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"
-        android:contentDescription="@string/imatgl_texte" />
+        android:contentDescription="@string/imatg_texte" />
 
     <LinearLayout
         android:id="@+id/text_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:orientation="vertical"
-        android:paddingLeft="16dp">
+        android:layout_toEndOf="@id/list_item_icon">
 
 
         <TextView
@@ -30,6 +32,7 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             android:textStyle="bold"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
             tools:text="lutti" />
 
 
@@ -41,9 +44,18 @@
             android:gravity="top"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
             tools:text="one" />
-
-
     </LinearLayout>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/icon_play"
+        android:layout_width="@dimen/list_icon_height"
+        android:layout_height="@dimen/list_icon_height"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:contentDescription="@string/icon_texte"
+        android:src="@drawable/ic_play_arrow" />
+
+</RelativeLayout>
